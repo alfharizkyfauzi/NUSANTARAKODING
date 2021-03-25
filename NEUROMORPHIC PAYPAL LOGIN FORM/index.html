@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NusantaraKoding</title>
+    <style>
+        body {
+            background: #2c2c54;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+        
+        .loginForm {
+            width: 400px;
+            border: 1px solid #eaeced;
+            padding: 42px 42px 36px;
+            border-radius: 2px;
+            box-shadow: #cedab2 0px 0px 2px 2px, #000000 4px 4px 8px, #4d4d4d -4px -4px 8px;
+        }
+        
+        .logo {
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        .emailInput,
+        .passwordInput {
+            width: 400px;
+            margin-bottom: 20px;
+            padding: 0 0 0 10px;
+            border-radius: 5px;
+            border: 1px solid #e1e7eb;
+            height: 44px;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        .login {
+            background-color: #0070ba;
+            color: #ffffff;
+            width: 100%;
+            border-radius: 5px;
+            height: 44px;
+            font-size: 16px;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .trouble {
+            padding: 20px 0;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .trouble a {
+            color: #0070ba;
+            text-decoration: none;
+        }
+        
+        .signup {
+            background-color: #d2dfe7;
+            color: #000000;
+            width: 100%;
+            border-radius: 5px;
+            height: 44px;
+            font-size: 16px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .separator {
+            border-bottom: 0;
+            box-shadow: #000000 4px 4px 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loginForm">
+        <img src="https://www.paypalobjects.com/images/shared/paypal-logo-129x32.svg" alt="Paypal logo" class="logo" />
+        <form autocomplete="off">
+            <div>
+                <input type="email" id="email" placeholder="Email or mobile number" class="emailInput" required />
+            </div>
+            <div>
+                <input type="password" id="password" placeholder="Password" class="passwordInput" required />
+            </div>
+            <button type="submit" class="login">Log In</button>
+        </form>
+        <p class="trouble">
+            <a href="https://www.paypal.com/authflow/password-recovery/?country.x=US&locale.x=en_US&redirectUri=%2Fsignin%2F">Having trouble logging in?</a
+        >
+      </p>
+      <hr class="separator" />
+      <button type="button" class="signup">Sign Up</button>
+    </div>
+  </body>
+</html>
