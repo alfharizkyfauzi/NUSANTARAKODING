@@ -1,0 +1,281 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NusantaraKoding</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow: hidden;
+        animation: colorChange 3.6s infinite linear both;
+        background-color: #2c2c54;
+      }
+
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .chick {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .face {
+        width: 40vmin;
+        height: 35vmin;
+        border-radius: 50%;
+        background-color: #f6f350;
+        border-top: 1vmin solid #974549;
+        border-left: 1vmin solid #974549;
+        border-right: 1vmin solid #974549;
+        position: relative;
+        animation: dance 0.6s infinite both;
+      }
+
+      .face:after {
+        content: "";
+        width: 42vmin;
+        height: 25vmin;
+        border-radius: 40% 40% 50% 50%;
+        background-color: #f6f350;
+        border-bottom: 1vmin solid #974549;
+        border-left: 1vmin solid #974549;
+        border-right: 1vmin solid #974549;
+        position: absolute;
+        bottom: -10vmin;
+        left: -3vmin;
+      }
+
+      .l-face-cover {
+        width: 20vmin;
+        height: 12vmin;
+        background-color: #f6f350;
+        position: absolute;
+        top: 12vmin;
+        left: 1vmin;
+        z-index: 2;
+      }
+
+      .r-face-cover {
+        width: 20vmin;
+        height: 12vmin;
+        background-color: #f6f350;
+        position: absolute;
+        top: 12vmin;
+        right: 1vmin;
+        z-index: 2;
+      }
+
+      .l-eye,
+      .r-eye {
+        width: 3vmin;
+        height: 6vmin;
+        border-radius: 50%;
+        background-color: #86252d;
+        position: absolute;
+        top: 18vmin;
+        z-index: 3;
+      }
+
+      .l-eye {
+        left: 13vmin;
+      }
+
+      .r-eye {
+        right: 13vmin;
+      }
+
+      .beak {
+        width: 10vmin;
+        height: 8vmin;
+        border-radius: 49% 51% 49% 51% / 75% 77% 23% 25%;
+        border: 1vmin solid #974549;
+        background-color: #d4ae41;
+        position: absolute;
+        top: 25vmin;
+        left: 14vmin;
+        z-index: 2;
+      }
+
+      .l-feather,
+      .r-feather {
+        width: 3vmin;
+        height: 10vmin;
+        border-radius: 50% 50% 0 0;
+        background-color: #f1ed51;
+        border: 0.5vmin solid #974549;
+        position: absolute;
+        top: -10vmin;
+      }
+
+      .l-feather {
+        left: 15vmin;
+      }
+
+      .r-feather {
+        right: 17.3vmin;
+      }
+
+      .body {
+        width: 40vmin;
+        height: 25vmin;
+        border-radius: 50%;
+        background-color: #f6f350;
+        border: 1vmin solid #9d4e3d;
+        position: relative;
+        top: 3vmin;
+        z-index: -1;
+        animation: bodyMoves 0.6s alternate 0.3s infinite linear both;
+      }
+
+      .l-leg,
+      .r-leg {
+        width: 5vmin;
+        height: 10vmin;
+        background-color: #d4ae41;
+        border-left: 0.6vmin solid #9d4e3d;
+        border-right: 0.6vmin solid #9d4e3d;
+        border-top: 0.6vmin solid #9d4e3d;
+        position: absolute;
+        bottom: -8vmin;
+      }
+
+      .l-leg {
+        left: 4vmin;
+        transform: rotateZ(20deg);
+      }
+
+      .r-leg {
+        right: 4vmin;
+        transform: rotateZ(-20deg);
+      }
+
+      .l-leg:after,
+      .r-leg:after {
+        content: "";
+        width: 10vmin;
+        height: 5vmin;
+        border-radius: 50%;
+        background-color: #d2a940;
+        border-left: 0.6vmin solid #9d4e3d;
+        border-right: 0.6vmin solid #9d4e3d;
+        border-bottom: 0.6vmin solid #9d4e3d;
+        position: absolute;
+        bottom: -3vmin;
+      }
+
+      .l-leg:after {
+        left: -4vmin;
+        transform: rotateZ(-20deg);
+      }
+
+      .r-leg:after {
+        right: -4vmin;
+        transform: rotateZ(20deg);
+      }
+
+      .l-hand,
+      .r-hand {
+        width: 10vmin;
+        height: 18vmin;
+        border-radius: 50%;
+        background-color: #f6f350;
+        border: 0.6vmin solid #9d4e3d;
+        position: absolute;
+      }
+
+      .l-hand {
+        left: -4vmin;
+        transform: rotateZ(10deg);
+        z-index: 4;
+        animation: lMoves 0.6s infinite both linear;
+      }
+
+      .r-hand {
+        right: -4vmin;
+        transform: rotateZ(-10deg);
+        animation: rMoves 0.6s infinite both linear;
+      }
+
+      @keyframes lMoves {
+        0% {
+          transform: rotateZ(10deg);
+        }
+        50% {
+          transform: rotateZ(40deg);
+        }
+        100% {
+          transform: rotateZ(10deg);
+        }
+      }
+
+      @keyframes rMoves {
+        0% {
+          transform: rotateZ(-10deg);
+        }
+        50% {
+          transform: rotateZ(-40deg);
+        }
+        100% {
+          transform: rotateZ(-10deg);
+        }
+      }
+
+      @keyframes dance {
+        0% {
+          top: 0;
+        }
+        50% {
+          top: 3vmin;
+        }
+        100% {
+          top: 0;
+        }
+      }
+
+      @keyframes bodyMoves {
+        0% {
+          transform: rotateZ(10deg);
+        }
+        100% {
+          transform: rotateZ(-10deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="chick">
+        <div class="face">
+          <div class="l-face-cover"></div>
+          <div class="r-face-cover"></div>
+          <div class="l-eye"></div>
+          <div class="r-eye"></div>
+          <div class="beak"></div>
+          <div class="l-feather"></div>
+          <div class="r-feather"></div>
+        </div>
+        <div class="body">
+          <div class="l-leg"></div>
+          <div class="r-leg"></div>
+          <div class="l-hand"></div>
+          <div class="r-hand"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

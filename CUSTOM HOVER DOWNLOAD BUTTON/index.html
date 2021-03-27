@@ -1,0 +1,85 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NusantaraKoding</title>
+    <style>
+      body {
+        background: #2c2c54;
+        color: #fff;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .download-btn {
+        width: 200px;
+        height: 60px;
+        text-align: center;
+        cursor: pointer;
+        margin: 20px 0px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .download-btn.btn-1 {
+        border: 5px solid #00acee;
+      }
+
+      .download-btn.btn-2 {
+        border: 5px solid #7b76e2;
+      }
+
+      .download-btn div {
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 50px;
+      }
+
+      .download-btn.btn-1 .top {
+        background: #00acee;
+      }
+
+      .download-btn.btn-2 .top {
+        background: #7b76e2;
+      }
+
+      .download-btn .bottom {
+        background: #eee;
+        color: #222;
+      }
+
+      .download-btn .top {
+        transition: all 300ms ease-in-out;
+      }
+
+      .download-btn:hover .top {
+        margin-top: -50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="center">
+      <div class="download-btn btn-1">
+        <div class="top"><i class="fa fa-cloud-download"></i> Download</div>
+        <div class="bottom">Size: 17GB</div>
+      </div>
+      <div class="download-btn btn-2">
+        <div class="top"><i class="fa fa-cloud-download"></i> Download</div>
+        <div class="bottom">Type: <i class="fa fa-file-zip-o"></i> Zip</div>
+      </div>
+    </div>
+  </body>
+  <script src="https://kit.fontawesome.com/dd8c49730d.js"></script>
+</html>
